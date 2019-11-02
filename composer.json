@@ -1,0 +1,54 @@
+{
+  "name": "julienbornstein/oauth2-deezer",
+  "type": "library",
+  "description": "Deezer Oauth 2.0 Client Provider for The PHP League OAuth2-Client",
+  "keywords": [
+    "deezer",
+    "oauth",
+    "oauth2",
+    "client",
+    "authorization",
+    "authentication"
+  ],
+  "homepage": "https://github.com/julienbornstein/oauth2-deezer",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Julien Bornstein",
+      "homepage": "https://www.parisbouge.com",
+      "email": "julien@parisbouge.com",
+      "role": "Author"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "league/oauth2-client": "^2.3"
+  },
+  "require-dev": {
+    "codacy/coverage": "^1.4",
+    "friendsofphp/php-cs-fixer": "^2.15",
+    "jakub-onderka/php-console-highlighter": "^0.4.0",
+    "jakub-onderka/php-parallel-lint": "^1.0",
+    "phpunit/phpunit": "^7.4",
+    "squizlabs/php_codesniffer": "^3.5",
+    "symfony/var-dumper": "^4.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "ParisBouge\\OAuth2\\Client\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ParisBouge\\OAuth2\\Client\\Test\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "csfix": "php-cs-fixer fix --diff --verbose --config=.php_cs"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  }
+}
