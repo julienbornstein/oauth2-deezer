@@ -1,0 +1,28 @@
+{
+  "id": "347832",
+  "name": "julien",
+  "lastname": "Foobar",
+  "firstname": "Julien",
+  "email": "foo@bar.com",
+  "status": 0,
+  "birthday": "0000-00-00",
+  "inscription_date": "2007-08-13",
+  "gender": "",
+  "link": "https://www.deezer.com/profile/347832",
+  "picture": "https://api.deezer.com/user/347832/image",
+  "picture_small": "https://cdns-images.dzcdn.net/images/user/7e2903c9177831aefae4a034e67f9cf4/56x56-000000-80-0-0.jpg",
+  "picture_medium": "https://cdns-images.dzcdn.net/images/user/7e2903c9177831aefae4a034e67f9cf4/250x250-000000-80-0-0.jpg",
+  "picture_big": "https://cdns-images.dzcdn.net/images/user/7e2903c9177831aefae4a034e67f9cf4/500x500-000000-80-0-0.jpg",
+  "picture_xl": "https://cdns-images.dzcdn.net/images/user/7e2903c9177831aefae4a034e67f9cf4/1000x1000-000000-80-0-0.jpg",
+  "country": "FR",
+  "lang": "fr",
+  "is_kid": false,
+  "explicit_content_level": "explicit_display",
+  "explicit_content_levels_available": [
+    "explicit_display",
+    "explicit_no_recommendation",
+    "explicit_hide"
+  ],
+  "tracklist": "https://api.deezer.com/user/347832/flow",
+  "type": "user"
+}
