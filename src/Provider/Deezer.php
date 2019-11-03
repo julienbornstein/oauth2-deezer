@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ParisBouge\OAuth2\Client\Provider;
 
 use League\OAuth2\Client\Provider\AbstractProvider;
@@ -15,24 +13,24 @@ class Deezer extends AbstractProvider
 {
     use BearerAuthorizationTrait;
 
-    public const ACCESS_TOKEN_RESOURCE_OWNER_ID = 'id';
+    const ACCESS_TOKEN_RESOURCE_OWNER_ID = 'id';
 
-    public const BASE_DEEZER_URL = 'https://connect.deezer.com/oauth/';
-    public const RESPONSE_TYPE = 'code';
+    const BASE_DEEZER_URL = 'https://connect.deezer.com/oauth/';
+    const RESPONSE_TYPE = 'code';
 
     // Available scopes.
-    public const SCOPE_BASIC_ACCESS = 'basic_access';
-    public const SCOPE_EMAIL = 'email';
-    public const SCOPE_OFFLINE_ACCESS = 'offline_access';
-    public const SCOPE_MANAGE_LIBRARY = 'manage_library';
-    public const SCOPE_MANAGE_COMMUNITY = 'manage_community';
-    public const SCOPE_DELETE_LIBRARY = 'delete_library';
-    public const SCOPE_LISTENING_HISTORY = 'listening_history';
+    const SCOPE_BASIC_ACCESS = 'basic_access';
+    const SCOPE_EMAIL = 'email';
+    const SCOPE_OFFLINE_ACCESS = 'offline_access';
+    const SCOPE_MANAGE_LIBRARY = 'manage_library';
+    const SCOPE_MANAGE_COMMUNITY = 'manage_community';
+    const SCOPE_DELETE_LIBRARY = 'delete_library';
+    const SCOPE_LISTENING_HISTORY = 'listening_history';
 
     /**
      * {@inheritdoc}
      */
-    public function getBaseAuthorizationUrl(): string
+    public function getBaseAuthorizationUrl()
     {
         return self::BASE_DEEZER_URL . 'auth.php';
     }
@@ -40,7 +38,7 @@ class Deezer extends AbstractProvider
     /**
      * {@inheritdoc}
      */
-    public function getBaseAccessTokenUrl(array $params): string
+    public function getBaseAccessTokenUrl(array $params)
     {
         return self::BASE_DEEZER_URL . 'access_token.php';
     }
@@ -48,7 +46,7 @@ class Deezer extends AbstractProvider
     /**
      * {@inheritdoc}
      */
-    public function getResourceOwnerDetailsUrl(AccessToken $token): string
+    public function getResourceOwnerDetailsUrl(AccessToken $token)
     {
         return 'https://api.deezer.com/user/me?' . http_build_query(['access_token' => $token->getToken()]);
     }
@@ -56,7 +54,7 @@ class Deezer extends AbstractProvider
     /**
      * {@inheritdoc}
      */
-    protected function getDefaultScopes(): array
+    protected function getDefaultScopes()
     {
         return [
             self::SCOPE_BASIC_ACCESS,
@@ -66,7 +64,7 @@ class Deezer extends AbstractProvider
     /**
      * {@inheritdoc}
      */
-    protected function checkResponse(ResponseInterface $response, $data): void
+    protected function checkResponse(ResponseInterface $response, $data)
     {
         // handle HTTP Status errors
         if ($response->getStatusCode() >= 500) {
@@ -112,7 +110,7 @@ class Deezer extends AbstractProvider
     /**
      * {@inheritdoc}
      */
-    protected function createResourceOwner(array $response, AccessToken $token): ResourceOwnerInterface
+    protected function createResourceOwner(array $response, AccessToken $token)
     {
         return new DeezerResourceOwner($response);
     }

@@ -35,7 +35,7 @@ class DeezerTest extends TestCase
         ]);
     }
 
-    public function testAuthorizationUrl(): void
+    public function testAuthorizationUrl()
     {
         $url = $this->provider->getAuthorizationUrl();
 
@@ -50,7 +50,7 @@ class DeezerTest extends TestCase
         $this->assertNotNull($this->provider->getState());
     }
 
-    public function testGetBaseAuthorizationUrl(): void
+    public function testGetBaseAuthorizationUrl()
     {
         $url = $this->provider->getAuthorizationUrl();
         $uri = parse_url($url);
@@ -58,7 +58,7 @@ class DeezerTest extends TestCase
         $this->assertSame('/oauth/auth.php', $uri['path']);
     }
 
-    public function testGetBaseAccessTokenUrl(): void
+    public function testGetBaseAccessTokenUrl()
     {
         $params = [];
 
@@ -68,7 +68,7 @@ class DeezerTest extends TestCase
         $this->assertSame('/oauth/access_token.php', $uri['path']);
     }
 
-    public function testGetResourceOwnerDetailsUrl(): void
+    public function testGetResourceOwnerDetailsUrl()
     {
         $accessToken = $this->createMock(AccessToken::class);
 
@@ -78,7 +78,7 @@ class DeezerTest extends TestCase
         $this->assertSame('/user/me', $uri['path']);
     }
 
-    public function testGetAccessToken(): void
+    public function testGetAccessToken()
     {
         $response = $this->createMock(ResponseInterface::class);
 
@@ -99,7 +99,7 @@ class DeezerTest extends TestCase
         $this->assertNull($token->getResourceOwnerId());
     }
 
-    public function testGetResourceOwner(): void
+    public function testGetResourceOwner()
     {
         $provider = new FooDeezerProvider();
 
@@ -138,7 +138,7 @@ class DeezerTest extends TestCase
         $this->assertSame('https://api.deezer.com/user/347832/flow', $resourceOwner->getTracklist());
     }
 
-    public function testCheckResponseFailureWithRegularError(): void
+    public function testCheckResponseFailureWithRegularError()
     {
         $this->expectException(DeezerIdentityProviderException::class);
         $this->expectExceptionMessage('No data returned.');
@@ -156,7 +156,7 @@ class DeezerTest extends TestCase
         $this->callMethod('checkResponse', [$response, $data]);
     }
 
-    public function testCheckResponseFailureWithWrongCode(): void
+    public function testCheckResponseFailureWithWrongCode()
     {
         $this->expectException(DeezerIdentityProviderException::class);
         $this->expectExceptionMessage('Wrong code.');

@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ParisBouge\OAuth2\Client\Provider;
 
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
@@ -15,7 +13,7 @@ class DeezerResourceOwner implements ResourceOwnerInterface
         $this->data = $response;
     }
 
-    public function getBirthday(): ?\DateTimeInterface
+    public function getBirthday()
     {
         if (null === $this->data['birthday'] || '0000-00-00' === $this->data['birthday']) {
             return null;
@@ -29,32 +27,32 @@ class DeezerResourceOwner implements ResourceOwnerInterface
         return $date;
     }
 
-    public function getCountry(): ?string
+    public function getCountry()
     {
-        return $this->data['country'] ?? null;
+        return isset($this->data['country']) ? $this->data['country'] : null;
     }
 
-    public function getEmail(): ?string
+    public function getEmail()
     {
-        return $this->data['email'] ?? null;
+        return isset($this->data['email']) ? $this->data['email'] : null;
     }
 
-    public function getExplicitContentLevel(): ?string
+    public function getExplicitContentLevel()
     {
-        return $this->data['explicit_content_level'] ?? null;
+        return isset($this->data['explicit_content_level'])? $this->data['explicit_content_level'] : null;
     }
 
-    public function getExplicitContentLevelsAvailable(): array
+    public function getExplicitContentLevelsAvailable()
     {
-        return $this->data['explicit_content_levels_available'] ?? [];
+        return isset($this->data['explicit_content_levels_available']) ? $this->data['explicit_content_levels_available'] : [];
     }
 
-    public function getFirstname(): ?string
+    public function getFirstname()
     {
-        return $this->data['firstname'] ?? null;
+        return isset($this->data['firstname']) ? $this->data['firstname'] : null;
     }
 
-    public function getGender(): ?string
+    public function getGender()
     {
         if (!\in_array($this->data['gender'], ['F', 'M'], true)) {
             return null;
@@ -63,12 +61,12 @@ class DeezerResourceOwner implements ResourceOwnerInterface
         return $this->data['gender'];
     }
 
-    public function getId(): string
+    public function getId()
     {
         return (string) $this->data['id'];
     }
 
-    public function getInscriptionDate(): ?\DateTimeInterface
+    public function getInscriptionDate()
     {
         if (null === $this->data['inscription_date']) {
             return null;
@@ -82,62 +80,62 @@ class DeezerResourceOwner implements ResourceOwnerInterface
         return $date;
     }
 
-    public function isKid(): bool
+    public function isKid()
     {
         return $this->data['is_kid'];
     }
 
-    public function getLang(): string
+    public function getLang()
     {
         return $this->data['lang'];
     }
 
-    public function getLastname(): ?string
+    public function getLastname()
     {
-        return $this->data['lastname'] ?? null;
+        return isset($this->data['lastname']) ? $this->data['lastname'] : null;
     }
 
-    public function getLink(): ?string
+    public function getLink()
     {
-        return $this->data['link'] ?? null;
+        return isset($this->data['link']) ? $this->data['link'] : null;
     }
 
-    public function getName(): ?string
+    public function getName()
     {
-        return $this->data['name'] ?? null;
+        return isset($this->data['name']) ? $this->data['name'] : null;
     }
 
-    public function getPicture(): ?string
+    public function getPicture()
     {
-        return $this->data['picture'] ?? null;
+        return isset($this->data['picture']) ? $this->data['picture'] : null;
     }
 
-    public function getPictureSmall(): ?string
+    public function getPictureSmall()
     {
-        return $this->data['picture_small'] ?? null;
+        return isset($this->data['picture_small']) ? $this->data['picture_small'] : null;
     }
 
-    public function getPictureMedium(): ?string
+    public function getPictureMedium()
     {
-        return $this->data['picture_medium'] ?? null;
+        return isset($this->data['picture_medium']) ? $this->data['picture_medium'] : null;
     }
 
-    public function getPictureBig(): ?string
+    public function getPictureBig()
     {
-        return $this->data['picture_big'] ?? null;
+        return isset($this->data['picture_big']) ? $this->data['picture_big'] : null;
     }
 
-    public function getPictureXl(): ?string
+    public function getPictureXl()
     {
-        return $this->data['picture_xl'] ?? null;
+        return isset($this->data['picture_xl']) ? $this->data['picture_xl'] : null;
     }
 
-    public function getStatus(): int
+    public function getStatus()
     {
         return $this->data['status'];
     }
 
-    public function getTracklist(): string
+    public function getTracklist()
     {
         return $this->data['tracklist'];
     }
@@ -145,7 +143,7 @@ class DeezerResourceOwner implements ResourceOwnerInterface
     /**
      * Return all of the owner details available as an array.
      */
-    public function toArray(): array
+    public function toArray()
     {
         return $this->data;
     }
