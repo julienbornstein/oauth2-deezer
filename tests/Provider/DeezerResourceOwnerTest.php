@@ -1,10 +1,16 @@
 <?php
 
-namespace ParisBouge\OAuth2\Client\Test\TestCase\Provider;
+declare(strict_types=1);
+
+namespace ParisBouge\OAuth2\Client\Test\Provider;
 
 use ParisBouge\OAuth2\Client\Provider\DeezerResourceOwner;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @internal
+ * @covers \ParisBouge\OAuth2\Client\Provider\DeezerResourceOwner
+ */
 class DeezerResourceOwnerTest extends TestCase
 {
     /**
@@ -12,13 +18,13 @@ class DeezerResourceOwnerTest extends TestCase
      */
     protected $resourceOwner;
 
-    protected function setUp()
+    protected function setUp(): void
     {
-        $user = json_decode(file_get_contents(__DIR__ . '/../../fixtures/user.json'), true);
+        $user = json_decode(file_get_contents(__DIR__ . '/../fixtures/user.json'), true);
         $this->resourceOwner = new DeezerResourceOwner($user);
     }
 
-    public function testGetter()
+    public function testGetter(): void
     {
         $this->assertNull($this->resourceOwner->getBirthday());
         $this->assertSame('FR', $this->resourceOwner->getCountry());
@@ -27,7 +33,7 @@ class DeezerResourceOwnerTest extends TestCase
         $this->assertSame([
             'explicit_display',
             'explicit_no_recommendation',
-            'explicit_hide'
+            'explicit_hide',
         ], $this->resourceOwner->getExplicitContentLevelsAvailable());
         $this->assertSame('Julien', $this->resourceOwner->getFirstname());
         $this->assertNull($this->resourceOwner->getGender());
@@ -51,11 +57,10 @@ class DeezerResourceOwnerTest extends TestCase
         $this->assertSame('https://api.deezer.com/user/347832/flow', $this->resourceOwner->getTracklist());
     }
 
-    public function testToArray()
+    public function testToArray(): void
     {
-        $array = json_decode(file_get_contents(__DIR__ . '/../../fixtures/user.json'), true);
+        $array = json_decode(file_get_contents(__DIR__ . '/../fixtures/user.json'), true);
 
         $this->assertSame($array, $this->resourceOwner->toArray());
-
     }
 }

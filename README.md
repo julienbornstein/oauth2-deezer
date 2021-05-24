@@ -1,26 +1,9 @@
-<div align="center">
-    <a href="https://travis-ci.org/julienbornstein/oauth2-deezer" title="Build">
-        <img src="https://img.shields.io/travis/julienbornstein/oauth2-deezer.svg?style=for-the-badge" alt="Build">
-    </a>
-    <a href="https://scrutinizer-ci.com/g/julienbornstein/oauth2-deezer/" title="Coverage">
-        <img src="https://img.shields.io/scrutinizer/coverage/g/julienbornstein/oauth2-deezer.svg?style=for-the-badge" alt="Coverage">
-    </a>
-    <a href="https://scrutinizer-ci.com/g/julienbornstein/oauth2-deezer/" title="Code Quality">
-        <img src="https://img.shields.io/scrutinizer/g/julienbornstein/oauth2-deezer.svg?style=for-the-badge" alt="Code Quality">
-    </a>
-    <a href="https://php.net" title="PHP Version">
-        <img src="https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg?style=for-the-badge" alt="PHP Version">
-    </a>
-    <a href="https://packagist.org/packages/julienbornstein/oauth2-deezer" title="Downloads">
-        <img src="https://img.shields.io/packagist/dt/julienbornstein/oauth2-deezer.svg?style=for-the-badge" alt="Downloads">
-    </a>
-    <a href="https://packagist.org/packages/julienbornstein/oauth2-deezer" title="Latest Stable Version">
-        <img src="https://img.shields.io/packagist/v/julienbornstein/oauth2-deezer.svg?style=for-the-badge" alt="Latest Stable Version">
-    </a>
-    <a href="https://packagist.org/packages/julienbornstein/oauth2-deezer" title="License">
-        <img src="https://img.shields.io/packagist/l/julienbornstein/oauth2-deezer.svg?style=for-the-badge" alt="License">
-    </a>
-</div>
+[![PHP version](https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg?style=for-the-badge)](https://php.net)
+[![Travis](https://img.shields.io/travis/julienbornstein/oauth2-deezer.svg?style=for-the-badge)](https://travis-ci.com/julienbornstein/oauth2-deezer)
+[![Codecov](https://img.shields.io/codecov/c/github/julienbornstein/oauth2-deezer?style=for-the-badge)](https://app.codecov.io/gh/julienbornstein/oauth2-deezer)
+[![Total Downloads](https://img.shields.io/packagist/dt/julienbornstein/oauth2-deezer.svg?style=for-the-badge)](https://packagist.org/packages/julienbornstein/oauth2-deezer)
+[![Latest Stable Version](https://img.shields.io/packagist/v/julienbornstein/oauth2-deezer.svg?style=for-the-badge)](https://packagist.org/packages/julienbornstein/oauth2-deezer)
+[![License](https://img.shields.io/packagist/l/julienbornstein/oauth2-deezer.svg?style=for-the-badge)](https://packagist.org/packages/julienbornstein/oauth2-deezer)
 
 # Deezer Provider for OAuth 2.0 Client
 

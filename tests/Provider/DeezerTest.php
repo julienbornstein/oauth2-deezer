@@ -1,12 +1,14 @@
 <?php
 
-namespace ParisBouge\OAuth2\Client\Test\TestCase\Provider;
+declare(strict_types=1);
+
+namespace ParisBouge\OAuth2\Client\Test\Provider;
 
 use GuzzleHttp\ClientInterface;
+use League\OAuth2\Client\Token\AccessToken;
+use ParisBouge\OAuth2\Client\Provider\Deezer;
 use ParisBouge\OAuth2\Client\Provider\DeezerResourceOwner;
 use ParisBouge\OAuth2\Client\Provider\Exception\DeezerIdentityProviderException;
-use ParisBouge\OAuth2\Client\Provider\Deezer;
-use League\OAuth2\Client\Token\AccessToken;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 
@@ -14,18 +16,22 @@ class FooDeezerProvider extends Deezer
 {
     protected function fetchResourceOwnerDetails(AccessToken $token)
     {
-        return json_decode(file_get_contents(__DIR__ . '/../../fixtures/user.json'), true);
+        return json_decode(file_get_contents(__DIR__ . '/../fixtures/user.json'), true);
     }
 }
 
+/**
+ * @internal
+ * @covers \ParisBouge\OAuth2\Client\Provider\Deezer
+ */
 class DeezerTest extends TestCase
 {
     /**
-     * @var \ParisBouge\OAuth2\Client\Provider\Deezer
+     * @var Deezer
      */
     protected $provider;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->provider = new Deezer([
             'clientId' => 'mock_client_id',
@@ -114,7 +120,7 @@ class DeezerTest extends TestCase
         $this->assertSame([
             'explicit_display',
             'explicit_no_recommendation',
-            'explicit_hide'
+            'explicit_hide',
         ], $resourceOwner->getExplicitContentLevelsAvailable());
         $this->assertSame('Julien', $resourceOwner->getFirstname());
         $this->assertNull($resourceOwner->getGender());
@@ -172,8 +178,7 @@ class DeezerTest extends TestCase
     }
 
     /**
-     * @param       $name
-     * @param array $args
+     * @param $name
      *
      * @return mixed|null
      */

@@ -25,10 +25,12 @@
     "league/oauth2-client": "^2.3"
   },
   "require-dev": {
-    "codacy/coverage": "^1.4",
-    "friendsofphp/php-cs-fixer": "^2.15",
+    "ext-json": "*",
+    "friendsofphp/php-cs-fixer": "^3.0",
     "jakub-onderka/php-console-highlighter": "^0.4.0",
     "jakub-onderka/php-parallel-lint": "^1.0",
+    "phpmd/phpmd": "^2.10",
+    "phpstan/phpstan": "^0.12.87",
     "phpunit/phpunit": "^7.4",
     "squizlabs/php_codesniffer": "^3.5",
     "symfony/var-dumper": "^4.3"

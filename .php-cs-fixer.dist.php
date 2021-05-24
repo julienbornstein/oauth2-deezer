@@ -1,20 +1,20 @@
 <?php
 
-$finder = PhpCsFixer\Finder::create()
-    ->in(__DIR__ . '/src')
+$finder = (new PhpCsFixer\Finder())
+    ->in(__DIR__)
+    ->exclude('var')
 ;
 
-return PhpCsFixer\Config::create()
+return (new PhpCsFixer\Config())
     ->setRiskyAllowed(true)
     ->setRules([
-        '@Symfony' => true,
+        '@PSR12' => true,
+        '@PhpCsFixer' => true,
         '@PHP71Migration' => true,
-        'binary_operator_spaces' => array(
-            'align_equals' => false,
-            'align_double_arrow' => false,
-        ),
-        '@Symfony:risky' => true,
         '@PHP71Migration:risky' => true,
+        '@PHPUnit60Migration:risky' => true,
+        '@Symfony' => true,
+        '@Symfony:risky' => true,
         'array_syntax' => ['syntax' => 'short'],
         'linebreak_after_opening_tag' => true,
         'mb_str_functions' => true,
@@ -29,7 +29,7 @@ return PhpCsFixer\Config::create()
         'strict_comparison' => true,
         'strict_param' => true,
         'concat_space' => ['spacing' => 'one'],
-        'trailing_comma_in_multiline_array' => true,
+        'trailing_comma_in_multiline' => true,
         'yoda_style' => false
     ])
     ->setFinder($finder)

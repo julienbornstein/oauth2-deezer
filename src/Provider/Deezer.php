@@ -132,7 +132,7 @@ class Deezer extends AbstractProvider
                 throw $e;
             }
 
-            return $content;
+            return $content; // @phpstan-ignore-line Abstract method defined return type array, but in their implementation it could also return string
         }
     }
 
