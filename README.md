@@ -1,5 +1,5 @@
 [![PHP version](https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg?style=for-the-badge)](https://php.net)
-[![Travis](https://img.shields.io/travis/julienbornstein/oauth2-deezer.svg?style=for-the-badge)](https://travis-ci.com/julienbornstein/oauth2-deezer)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/julienbornstein/oauth2-deezer/Continuous%20Integration?style=for-the-badge)](https://github.com/julienbornstein/oauth2-deezer/actions/workflows/continuous-integration.yml)
 [![Codecov](https://img.shields.io/codecov/c/github/julienbornstein/oauth2-deezer?style=for-the-badge)](https://app.codecov.io/gh/julienbornstein/oauth2-deezer)
 [![Total Downloads](https://img.shields.io/packagist/dt/julienbornstein/oauth2-deezer.svg?style=for-the-badge)](https://packagist.org/packages/julienbornstein/oauth2-deezer)
 [![Latest Stable Version](https://img.shields.io/packagist/v/julienbornstein/oauth2-deezer.svg?style=for-the-badge)](https://packagist.org/packages/julienbornstein/oauth2-deezer)
