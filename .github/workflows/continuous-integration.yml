@@ -51,4 +51,6 @@ jobs:
         run: vendor/bin/phpmd src text ruleset.xml --suffixes php
 
       - name: Upload Code Coverage to Codecov.io
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
