@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ParisBouge\OAuth2\Client\Test\Provider;
 
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Psr7\Utils;
 use League\OAuth2\Client\Token\AccessToken;
 use ParisBouge\OAuth2\Client\Provider\Deezer;
 use ParisBouge\OAuth2\Client\Provider\DeezerResourceOwner;
@@ -88,7 +89,10 @@ class DeezerTest extends TestCase
     {
         $response = $this->createMock(ResponseInterface::class);
 
-        $response->method('getBody')->willReturn('{"access_token": "mock_access_token", "expires_in": 3600}');
+        $body = '{"access_token": "mock_access_token", "expires_in": 3600}';
+        $stream = Utils::streamFor($body);
+
+        $response->method('getBody')->willReturn($stream);
         $response->method('getHeader')->willReturn(['content-type' => 'json']);
         $response->method('getStatusCode')->willReturn(200);
 
